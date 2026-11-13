@@ -77,7 +77,7 @@
   .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:16px}
   .section-head h2{margin:0;font-size:22px;letter-spacing:-.02em;font-weight:800;line-height:1.15}
   .section-head p{margin:5px 0 0;color:var(--muted);font-size:14px;line-height:1.55}
-  .badge{font-size:11px;font-weight:700;padding:6px 9px;border-radius:7px;white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .badge{font-size:11px;font-weight:700;padding:6px 9px;border-radius:7px;white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);max-width:100%}
   .badge-teal{background:var(--teal-soft);color:var(--teal);border-color:transparent}
   .badge-amber{background:var(--amber-soft);color:var(--gold);border-color:transparent}
 
@@ -148,7 +148,7 @@
   .fb-clue{margin:0;font-size:14.5px;line-height:1.55}
   .fb-clue strong{color:var(--amber);font-weight:800;letter-spacing:.01em}
   @media(prefers-color-scheme:dark){.fb-clue strong{color:var(--amber)}}
-  .fb-clue span{font-weight:800;color:var(--ink);background:var(--amber-soft);border:1px solid var(--amber);border-radius:7px;padding:2px 8px;display:inline-block}
+  .fb-clue span{font-weight:800;color:var(--ink);background:var(--amber-soft);border:1px solid var(--amber);border-radius:7px;padding:2px 8px;display:inline-block;max-width:100%;overflow-wrap:anywhere}
   .fb-basis{margin:0;font-size:14px;line-height:1.6}
   .fb-basis strong{color:var(--teal);font-weight:800}
   .fb-why{margin:0;font-size:14px;line-height:1.6}
@@ -332,6 +332,80 @@
   .missed-line .corr{color:var(--green-dark);font-weight:700}
   .missed-expl{margin:6px 0 0;font-size:13.5px;color:var(--muted);line-height:1.65}
   footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12.5px;line-height:1.65}
+
+  /* MOBILE RESPONSIVENESS (layout only) */
+  @media(max-width:640px){
+    .wrap{padding:0 16px 56px}
+    .verse{padding:18px 16px 16px}
+    .hero{padding-top:20px;gap:12px}
+    .hero-main{padding:20px 18px}
+    .count-card{padding:20px 18px}
+    .count-num{font-size:25px}
+    .section{margin-top:34px}
+    .section-head{flex-direction:column;align-items:flex-start;gap:10px}
+    .section-head>div{min-width:0;max-width:100%}
+    .badge{white-space:normal;line-height:1.45}
+    .subject{padding:18px}
+    .quiz-head{padding:16px 18px 0}
+    .progress{margin:14px 18px 0}
+    .quiz-body{padding:18px}
+    .exam-panel{padding:18px}
+    .overview{padding:18px}
+    .cov-card{padding:18px}
+    .lib-card{padding:18px}
+    .resource-card{padding:18px}
+    .mock{padding:18px}
+    .mock .btn{white-space:normal!important;width:100%;justify-content:center;text-align:center}
+    .cta-row .btn{flex:1 1 100%;justify-content:center;text-align:center}
+    .btn{justify-content:center}
+    .opt{min-height:56px;padding:13px 14px;overflow-wrap:break-word}
+    .opt>span:last-child{min-width:0}
+    .question,.missed-q{overflow-wrap:break-word}
+    .feedback{padding:14px}
+    .feedback p,.fb-basis,.fb-why,.study-notes li,.study-reading,.resource-desc,.resource-link,.study-link,.missed-expl,.missed-line{overflow-wrap:break-word}
+    .study-link,.resource-link{overflow-wrap:anywhere}
+    .study-toggle{min-height:44px;padding:9px 13px}
+    .nav-btn{min-height:44px}
+    .nav-grid{grid-template-columns:repeat(auto-fill,minmax(42px,1fr))}
+    .quiz-foot{flex-direction:column;align-items:stretch;text-align:center}
+    .quiz-foot .btn-next.show{display:flex;width:100%}
+    .exam-nav-row{flex-wrap:nowrap}
+    .exam-nav-row .btn{flex:1 1 0;min-width:0;padding-left:10px;padding-right:10px}
+    .exam-submit-row{justify-content:stretch}
+    .exam-submit-row .btn{width:100%}
+    .confirm-btns .btn{flex:1 1 100%}
+    .result .btn{width:100%}
+    .exam-top>div:last-child{width:100%}
+    .exam-top .btn-ghost{flex:1}
+    .score-pill{white-space:normal}
+    .lib-list li{flex-direction:column;gap:2px;align-items:flex-start}
+    .lib-list span{white-space:normal}
+    .resource-tag{white-space:normal;line-height:1.45}
+    .cov-lang{line-height:1.45}
+    .cov-progress-text{min-width:0}
+    .subj-row{grid-template-columns:1fr}
+    .exam-fact b{font-size:15.5px}
+    .ov-item p{font-size:15px}
+    footer{margin-top:36px}
+  }
+  @media(max-width:340px){
+    .ov-grid{grid-template-columns:1fr;gap:12px}
+    .exam-facts{grid-template-columns:1fr;gap:8px}
+    .exam-fact{display:flex;align-items:baseline;gap:10px}
+    .exam-fact b{flex:0 0 auto}
+    .exam-fact span{margin-top:0}
+  }
+  @media(max-width:400px){
+    .count-grid{padding:13px 0}
+    .count-num{font-size:23px}
+    .count-card p{font-size:13px}
+    h1{font-size:32px}
+    .result-score{font-size:46px}
+    .exam-timer{font-size:30px}
+    .question{font-size:17.5px}
+    .ov-item p{font-size:15.5px}
+    .section-head h2{font-size:20px}
+  }
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
